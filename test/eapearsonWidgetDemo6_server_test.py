@@ -6,7 +6,7 @@ from configparser import ConfigParser
 
 from eapearsonWidgetDemo6.eapearsonWidgetDemo6Impl import eapearsonWidgetDemo6
 from eapearsonWidgetDemo6.eapearsonWidgetDemo6Server import MethodContext
-from eapearsonWidgetDemo6.authclient import KBaseAuth as _KBaseAuth
+from installed_clients.authclient import KBaseAuth as _KBaseAuth
 
 from installed_clients.WorkspaceClient import Workspace
 
@@ -41,7 +41,6 @@ class eapearsonWidgetDemo6Test(unittest.TestCase):
         cls.wsClient = Workspace(cls.wsURL)
         cls.serviceImpl = eapearsonWidgetDemo6(cls.cfg)
         cls.scratch = cls.cfg['scratch']
-        cls.callback_url = os.environ['SDK_CALLBACK_URL']
         suffix = int(time.time() * 1000)
         cls.wsName = "test_ContigFilter_" + str(suffix)
         ret = cls.wsClient.create_workspace({'workspace': cls.wsName})  # noqa
