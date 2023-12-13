@@ -13,7 +13,6 @@
                 raise Exception('Widget support not yet available for /widgets!')
 
         # For debugging
-        ctx = MethodContext(self.userlog)
         whitelist_keys = [
             # Exposed locally
             "REQUEST_METHOD",
